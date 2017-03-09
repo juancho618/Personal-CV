@@ -1,0 +1,36 @@
+aside(ng-class="classAside", ng-show="asideMenu")
+    a#closeAside(ng-click="toggleStatus('hide')")
+        span.fa.fa-chevron-circle-up.fa-2x.hide-menu
+    div.aside-img-container
+        div.circular
+    div.site-title
+        h3 Juan Jose Soriano
+    nav
+        ul
+            li.active
+                a
+                    i.fa.fa-home  Home
+            li
+                a(href='/about')
+                    i.fa.fa-user-circle  About me
+            li
+                a
+                    i.fa.fa-id-badge  Resume
+            li
+                a(href='/portfolio')
+                    i.fa.fa-suitcase  Portfolio
+            li
+                a
+                    i.fa.fa-telegram  Contact
+        div.aside-footer
+            ul
+                li
+                    a
+                        i.fa.fa-facebook.fa-3x
+                li
+                    a
+                        i.fa.fa-github.fa-3x
+                li
+                    a
+                        i.fa.fa-linkedin.fa-3x
+

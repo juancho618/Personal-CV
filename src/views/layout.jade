@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    include partials/_head
+    body(ng-app="myCVApp", ng-controller="mainCtrl")
+        div.container-fluid
+            div.row.no-gutter.global-container
+                include partials/_nav
+                include partials/_aside
+
+                div#main(ng-show="showMainBlock", ng-class="mainBlock")
+                    a.menuBtn(ng-hide="menuBtn", ng-click="toggleStatus('show')")
+                        i.fa.fa-chevron-circle-down.fa-2x
+                    block content
+
+    script(src="/static/js/angular.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.js")
+    script(src="/static/js/scripts/app.js")
+    script(src="/static/js/jquery-3.1.1.min.js")
+    script(src="/static/js/bootstrap.js")
+
+

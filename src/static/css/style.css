@@ -1,0 +1,264 @@
+html{
+  height: 100%;
+}
+body {
+  margin: 0px;
+  min-height: 100%;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+.global-container{
+  height: 100vh;
+}
+aside {
+  background-color: #1C262B;
+  height: 100%;
+}
+
+/* Aside menu options  */
+aside nav li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+aside nav li a {
+    text-align: center;
+    vertical-align: middle;
+}
+/* Aside footer */
+.aside-footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /*border: 1px solid white;*/
+    width: 100%;
+    height: 15%;
+    box-sizing: border-box;
+    padding: 20%;
+}
+
+.aside-footer ul{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+}
+
+.aside-footer ul li{
+    float: left;
+    width: 33.33%;
+    border: none;
+}
+
+.main-block{
+  height: 100%;
+}
+/* Menu buttons*/
+.menuBtn{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+.hide-menu{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+/* Aside menu hide animation */
+aside.ng-hide-add, div.ng-hide-add {
+    -webkit-animation: slideOutUp 1s;
+    -moz-animation: slideOutUp 1s;
+    -ms-animation: slideOutUp 1s;
+    animation: slideOutUp 1s;
+}
+
+/* Aside menu show animation */
+aside.ng-hide-remove, div.ng-hide-remove {
+    -webkit-animation: slideInDown 1s;
+    -moz-animation: slideInDown 1s;
+    -ms-animation: slideInDown 1s;
+    animation: slideInDown 1s;
+}
+
+/* Main background img  */
+img.bg{
+    min-height: 100%;
+    /* Set up proportionate scaling */
+   width: 100%;
+   height: auto;
+}
+
+/* site title aside*/
+.site-title{
+  background-color: #2BA163;
+    text-align: center;
+}
+.site-title>h3{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+/* nav bar elements */
+nav ul{
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav li{
+  border-bottom: 1px solid #888;
+}
+
+nav ul i{
+  display: block;
+}
+
+/* Circular image aside menu container */
+.aside-img-container{
+    margin-top: 10px;
+}
+/* Circular image*/
+.circular{
+  width: 130px;
+	height: 130px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(/static/img/me.png) no-repeat;
+  margin: auto;
+}
+
+/* Circular Brand Image */
+.circularBrand{
+    position: absolute;
+    top: 9px;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    background: url(/static/img/rsz_me.png) no-repeat;
+    margin: auto;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 100%;
+}
+
+/* Ankers style */
+a{
+  color: white;
+    display: block;
+}
+a:link{
+  text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.inside-text{
+  color: black;
+  position: absolute;
+    transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border: 1px solid blue;
+  width: 33.33%;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+/* Blinker text */
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Media query */
+@media (max-width: 920px) {
+    aside{
+        display: none;
+    }
+    .navbar{
+        display: block;
+        margin-bottom: 0px;
+        background-color: #2BA163;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .navbar-toggle{
+        border: 1px solid white;
+    }
+}
+
+/* Portfolio style */
+#porfolioContainer{
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+/* About */
+#aboutImgHeader{
+    height: 25vh;
+    background: url("/static/img/Background.jpg");
+    max-height: 100%;
+    width: 100%;
+}
+
+/* resume div */
+#resumeBlock{
+    height: 25vh;
+    background: black;
+    max-height: 100%;
+    width: 100%;
+}
+
+#resumeBlock > div{
+    height: 100%;
+}
+
+/* description block */
+#descriptionBlock{
+    height: 50vh;
+    background: aqua;
+    max-height: 100%;
+    width: 100%;
+}
+@media (min-width: 920px) {
+    .navbar {
+        display: none;
+    }
+}
+
+

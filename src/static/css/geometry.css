@@ -1,0 +1,164 @@
+
+.center-text {
+    text-align: center;
+}
+
+.attribution {
+    font-size: 90%;
+}
+
+.wrap {
+    margin: 0 auto;
+}
+
+.clip-svg {
+    width: 0;
+    height: 0;
+}
+
+.polygon-each {
+    padding: 10px;
+    text-align: center;
+}
+
+.polygon-each-img-wrap img {
+    margin-bottom: 10px;
+}
+
+.polygon-each-img-wrap:hover {
+    background: #2BA163;
+    -webkit-transition: all 0.8s linear;
+    transition: all 0.8s linear;
+}
+
+
+@media only screen and (min-width: 800px) {
+    .polygon-each {
+        display: inline-block;
+        width: 47%;
+        vertical-align: top;
+    }
+
+    .polygon-each img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.polygon-clip-rhombus {
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    -webkit-clip-path: url("#polygon-clip-rhombus");
+    clip-path: url("#polygon-clip-rhombus");
+}
+
+.polygon-clip-square {
+    -webkit-clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+    clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+    -webkit-clip-path: url("#polygon-clip-square");
+    clip-path: url("#polygon-clip-square");
+}
+
+.polygon-clip-rectangle {
+    -webkit-clip-path: polygon(10% 100%, 10% 0%, 90% 0%, 90% 100%);
+    clip-path: polygon(10% 100%, 10% 0%, 90% 0%, 90% 100%);
+    -webkit-clip-path: url("#polygon-clip-rectangle");
+    clip-path: url("#polygon-clip-rectangle");
+}
+
+.polygon-clip-rhomboid {
+    -webkit-clip-path: polygon(0% 100%, 30% 0%, 100% 0%, 70% 100%);
+    clip-path: polygon(0% 100%, 30% 0%, 100% 0%, 70% 100%);
+    -webkit-clip-path: url("#polygon-clip-rhomboid");
+    clip-path: url("#polygon-clip-rhomboid");
+}
+
+.polygon-clip-kite {
+    -webkit-clip-path: polygon(50% 0%, 100% 30%, 50% 100%, 0% 30%);
+    clip-path: polygon(50% 0%, 100% 30%, 50% 100%, 0% 30%);
+    -webkit-clip-path: url("#polygon-clip-kite");
+    clip-path: url("#polygon-clip-kite");
+}
+
+.polygon-clip-trapezoid {
+    -webkit-clip-path: polygon(30% 100%, 30% 0%, 60% 0%, 100% 100%);
+    clip-path: polygon(30% 100%, 30% 0%, 60% 0%, 100% 100%);
+    -webkit-clip-path: url("#polygon-clip-trapezoid");
+    clip-path: url("#polygon-clip-trapezoid");
+}
+
+.polygon-clip-trapezoid-isosceles {
+    -webkit-clip-path: polygon(0% 100%, 30% 0%, 70% 0%, 100% 100%);
+    clip-path: polygon(0% 100%, 30% 0%, 70% 0%, 100% 100%);
+    -webkit-clip-path: url("#polygon-clip-trapezoid-isosceles");
+    clip-path: url("#polygon-clip-trapezoid-isosceles");
+}
+
+.polygon-clip-triangle-equilateral {
+    -webkit-clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+    clip-path: polygon(0% 87%, 50% 0%, 50% 0%, 100% 87%);
+    -webkit-clip-path: url("#polygon-clip-triangle-equilateral");
+    clip-path: url("#polygon-clip-triangle-equilateral");
+}
+
+.polygon-clip-triangle-isosceles {
+    -webkit-clip-path: polygon(0% 100%, 50% 0%, 50% 0%, 100% 100%);
+    clip-path: polygon(0% 100%, 50% 0%, 50% 0%, 100% 100%);
+    -webkit-clip-path: url("#polygon-clip-triangle-isosceles");
+    clip-path: url("#polygon-clip-triangle-isosceles");
+}
+
+.polygon-clip-triangle-scalene {
+    -webkit-clip-path: polygon(20% 70%, 50% 0%, 50% 0%, 100% 100%);
+    clip-path: polygon(20% 70%, 50% 0%, 50% 0%, 100% 100%);
+    -webkit-clip-path: url("#polygon-clip-triangle-scalene");
+    clip-path: url("#polygon-clip-triangle-scalene");
+}
+
+.polygon-clip-triangle-right {
+    -webkit-clip-path: polygon(41% 100%, 41% 0%, 100% 100%, 100% 100%);
+    clip-path: polygon(41% 100%, 41% 0%, 100% 100%, 100% 100%);
+    -webkit-clip-path: url("#polygon-clip-triangle-right");
+    clip-path: url("#polygon-clip-triangle-right");
+}
+
+.polygon-clip-pentagon {
+    -webkit-clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 20% 100%, 0% 40%);
+    clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 20% 100%, 0% 40%);
+    -webkit-clip-path: url("#polygon-clip-pentagon");
+    clip-path: url("#polygon-clip-pentagon");
+}
+
+.polygon-clip-hexagon {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    -webkit-clip-path: url("#polygon-clip-hexagon");
+    clip-path: url("#polygon-clip-hexagon");
+}
+
+.polygon-clip-heptagon {
+    -webkit-clip-path: polygon(50% 0, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0 60%, 10% 20%);
+    clip-path: polygon(50% 0, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0 60%, 10% 20%);
+    -webkit-clip-path: url("#polygon-clip-heptagon");
+    clip-path: url("#polygon-clip-heptagon");
+}
+
+.polygon-clip-octagon {
+    -webkit-clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+    clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+    -webkit-clip-path: url("#polygon-clip-octagon");
+    clip-path: url("#polygon-clip-octagon");
+}
+
+.polygon-clip-star {
+    -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+    clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+    -webkit-clip-path: url("#polygon-clip-star");
+    clip-path: url("#polygon-clip-star");
+}

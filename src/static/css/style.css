@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
 html{
   height: 100%;
 }
@@ -5,7 +7,7 @@ body {
   margin: 0px;
   min-height: 100%;
   color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 
 }
 .global-container{
@@ -21,10 +23,23 @@ aside nav li{
     padding-top: 10px;
     padding-bottom: 10px;
     box-sizing: border-box;
+    outline:none;
+
+    -webkit-transition: all ease 0.8s;
+    -moz-transition: all ease 0.8s;
+    transition: all ease 0.8s;
+}
+aside nav li:hover{
+    box-shadow: inset 0 100px 0 0 #2BA163;
 }
 aside nav li a {
     text-align: center;
     vertical-align: middle;
+}
+aside nav li a:hover {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 /* Aside footer */
 .aside-footer{
@@ -227,18 +242,39 @@ a:active {
     padding-left: 10px;
     padding-top: 10px;
 }
+/* Resume */
+#resumeImgHeader{
+    height: 25vh;
+    background: url("/static/img/time2.jpeg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    /* Add Opacity effect*/
+    -khtml-opacity:.50;
+    -moz-opacity:.50;
+    -ms-filter:"alpha(opacity=50)";
+    filter:alpha(opacity=50);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+    opacity:.50;
+}
 
 /* About */
 #aboutImgHeader{
-    height: 25vh;
-    background: url("/static/img/Background.jpg");
-    max-height: 100%;
-    width: 100%;
-}
+     height: 25vh;
+     background: url("/static/img/aboutBackground.jpeg");
+     background-size:     cover;
+     background-repeat:   no-repeat;
+     /* Add Opacity effect*/
+     -khtml-opacity:.50;
+     -moz-opacity:.50;
+     -ms-filter:"alpha(opacity=50)";
+     filter:alpha(opacity=50);
+     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+     opacity:.50;
+ }
 
 /* resume div */
 #resumeBlock{
-    height: 25vh;
+    height: 20vh;
     background: black;
     max-height: 100%;
     width: 100%;
@@ -246,15 +282,178 @@ a:active {
 
 #resumeBlock > div{
     height: 100%;
+    padding-top: 5vh;
+    margin: 0px;
+    background-color: #2BA163;
+
+    transition: all .2s ease-in-out;
+}
+#resumeBlock > div:hover{
+    transform: scale(1.1);
 }
 
 /* description block */
 #descriptionBlock{
-    height: 50vh;
-    background: aqua;
+    height: 55vh;
     max-height: 100%;
     width: 100%;
 }
+#descriptionBlock h2{
+    color: #2b542c;
+}
+#descriptionBlock  {
+    color: black;
+    text-align: justify;
+}
+/* Background text About */
+.bgAboutText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    padding: 0px;
+    margin: 0px;
+}
+.resumeContainer{
+    height: inherit;
+}
+.clear{
+    clear:both;
+}
+/* Random Quote (About Me) */
+#rndQuote{
+}
+
+blockquote{
+    display:block;
+    background: #fff;
+    padding: 15px 20px 15px 45px;
+    margin: 0 0 20px;
+    position: relative;
+
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #666;
+    text-align: justify;
+
+    /*Borders - (Optional)*/
+    border-left: 15px solid #2b542c;
+    border-right: 2px solid #2b542c;
+
+    /*Box Shadow - (Optional)*/
+    -moz-box-shadow: 2px 2px 15px #ccc;
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+}
+
+blockquote::before{
+    content: "\201C"; /*Unicode for Left Double Quote*/
+
+    /*Font*/
+    font-family: Georgia, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #999;
+
+    /*Positioning*/
+    position: absolute;
+    left: 10px;
+    top:5px;
+}
+
+blockquote::after{
+    /*Reset to make sure*/
+    content: "";
+}
+
+blockquote a{
+    text-decoration: none;
+    background: #eee;
+    cursor: pointer;
+    padding: 0 3px;
+    color: #c76c0c;
+}
+
+blockquote a:hover{
+    color: #666;
+}
+
+blockquote em{
+    font-style: italic;
+}
+#RndFactBtn{
+    background-color: #2BA163;
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid #18ab29;
+    font-family: 'Open Sans', sans-serif;
+    outline:none;
+}
+
+/*Banner*/
+.banner {
+    font-family: Lato;
+    z-index: 1;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background: #268d57;
+    left: 50%;
+    margin-left: -150px;
+    top: 40px;
+    position: relative;
+    margin-bottom: 100px;
+}
+.banner:before,
+.banner:after {
+    z-index: -1;
+    content: "";
+    display: block;
+    top: 5px;
+    position: absolute;
+    border-top: 20px solid #1b653e;
+    border-bottom: 20px solid #1b653e;
+}
+.banner:before {
+    right: 100%;
+    margin-right: 0;
+    border-right: 20px solid #1b653e;
+    border-left: 5px solid transparent;
+}
+.banner:after {
+    left: 100%;
+    margin-left: 0;
+    border-left: 20px solid #1b653e;
+    border-right: 5px solid transparent;
+}
+.col-header{
+    width: inherit;
+    max-width: 20vw;
+
+}
+/*
+.clip-svg {
+    width: 0;
+    height: 0;
+}
+ .img-polygon{
+    max-width: 100%;
+    height: auto;
+}
+
+.polygon-clip-hexagon {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    -webkit-clip-path: url("#polygon-clip-hexagon");
+    clip-path: url("#polygon-clip-hexagon");
+}*/
 @media (min-width: 920px) {
     .navbar {
         display: none;

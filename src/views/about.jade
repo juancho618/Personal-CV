@@ -1,10 +1,51 @@
 extends layout
 block content
     div#aboutImgHeader
+        h1.bgAboutText Web Developer
     div#resumeBlock
-        div.col-md-3(style="background: blue;")
-        div.col-md-3(style="background: red;")
-        div.col-md-3(style="background: green;")
-        div.col-md-3(style="background: violet;")
+        div.col-md-3
+            div.resumeContainer.text-center
+                i.fa.fa-microchip.fa-4x
+                h3 Embedded Systems
+        div.col-md-3
+            div.resumeContainer.text-center
+                i.fa.fa-database.fa-4x
+                h3 Data Analysis and automation
+        div.col-md-3
+            div.resumeContainer.text-center
+                i.fa.fa-android.fa-4x
+                h3 Mobile Apps development
+        div.col-md-3
+            div.resumeContainer.text-center
+                i.fa.fa-coffee.fa-4x
+                h3 Coffee Lover
     div#descriptionBlock
-        div.col-md-12 bla content 2
+        div.container-fluid
+            div.col-md-12.text-center
+                div.banner About me
+            div.row
+                div.col-md-9
+                    p I am a devoted developer, maker and innovative person who enjoys developing new features and tools for the good of the people, looking always for efficient and simple solutions usable for everyone.
+                    p I am an Industrial Engineer who found out the web, mobile and system development as an essential tool to improve and facilitate any process. In this way, while I was working as Organizational analyst in a Hospital, I started developing and proposing the new Process Management and Risk Analysis tool for the hospital as a cross department platform where the information was shared in an online community platform where everyone contributing from their roles.
+                    p From this experience working for 3 years in a Hospital, personal projects and thanks to my hunger of knowledge, I decided to start a Master in Applied Computer Science which I am currently doing, polishing my abilities and getting more knowledge from my professors.
+                    p Despite of all this technical skills and work experience, in my free time I like to explore new cities and cultures, go to for a cup of coffee and speak with friends, discover new people, play the guitar and when it is possible I do Scuba diving escaping to deep and infinite Blue world.
+
+                    blockquote {{fact}}
+                        button.pull-right#RndFactBtn(ng-click="randomFact()") Random Fact!
+                div.col-md-3
+                    div.row
+                        .polygon-each
+                            .polygon-each-img-wrap
+                                img.polygon-clip-hexagon(src='/static/img/me1.jpg', alt='demo-clip-hexagon')
+                            svg.clip-svg
+                                defs
+                                    clippath#polygon-clip-hexagon(clippathunits='objectBoundingBox')
+                                        polygon(points='0.5 0, 1 0.25, 1 0.75, 0.5 1, 0 0.75, 0 0.25')
+                        //img(src="/static/img/me1.jpg", class='col-header img-responsive', alt="imagen")
+                    div.row.col-content
+                        p Name: Juan Jose Soriano
+                        p Age: 25
+                        p Nationality: Colombian
+                        p Email: jjsorianoe@gmail.com
+                div.col-md-12
+

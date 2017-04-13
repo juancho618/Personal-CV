@@ -8,20 +8,25 @@ aside(ng-class="classAside", ng-show="asideMenu")
     nav
         ul
             li.active
-                a
-                    i.fa.fa-home  Home
+                a(href='/')
+                    i.fa.fa-home
+                    |  Home
             li
                 a(href='/about')
-                    i.fa.fa-user-circle  About me
+                    i.fa.fa-user-circle
+                    |  About me
             li
-                a
-                    i.fa.fa-id-badge  Resume
+                a(href='/resume')
+                    i.fa.fa-id-badge
+                    |  Resume
             li
                 a(href='/portfolio')
-                    i.fa.fa-suitcase  Portfolio
+                    i.fa.fa-suitcase
+                    |  Portfolio
             li
                 a
-                    i.fa.fa-telegram  Contact
+                    i.fa.fa-telegram
+                    |  Contact
         div.aside-footer
             ul
                 li

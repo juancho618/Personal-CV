@@ -9,7 +9,7 @@ block content
                 div.col-md-12
                     div.form-style-6
                         h1 Send me a message
-                        form
+                        form(action="/contact", method='post')
                             input(type="text", name="name", placeholder="Your Name")
                             input(type="text", name="email", placeholder="Email Address")
                             textarea(name="message", rows=5, placeholder="Type your Message")

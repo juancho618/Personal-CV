@@ -1,0 +1,28 @@
+extends layout
+block content
+    link(rel="styleSheet", href="/static/css/contact.css", type="text/css")
+    div#contactImgHeader
+        h1.bgAboutText Contact
+    div#contactBlock
+        div.container-fluid
+            div.row
+                div.col-md-12
+                    div.form-style-6
+                        h1 Send me a message
+                        form
+                            input(type="text", name="name", placeholder="Your Name")
+                            input(type="text", name="email", placeholder="Email Address")
+                            textarea(name="message", rows=5, placeholder="Type your Message")
+                            input(type="submit", value="send")
+    footer
+        div
+            i.fa.fa-envelope.fa-2x.fa-fw
+            | jjsoriano@gmail.com
+        div
+            i.fa.fa-phone.fa-2x.fa-fw
+            | +32 0483 47 23 27
+        div
+            i.fa.fa-map-marker.fa-2x.fa-fw
+            | Brussels, Belgium
+
+

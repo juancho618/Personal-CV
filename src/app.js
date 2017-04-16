@@ -17,7 +17,7 @@ app.use('/static', express.static(__dirname + '/static')); // use define the mid
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
-app.set('view engine', 'jade');  // how to render the app
+app.set('view engine', 'pug');  // how to render the app
 app.set('views', __dirname + '/views');  // path to the views
 
 
@@ -38,6 +38,9 @@ app.get('/locker', function (req, res) {
 });
 app.get('/resume', function (req, res) {
     res.render('resume');
+});
+app.get('/contact', function (req, res) {
+    res.render('contact');
 });
 app.listen(5555, function(){
     console.log('running in port 8080')

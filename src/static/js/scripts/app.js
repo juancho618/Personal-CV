@@ -3,7 +3,7 @@
  */
 var app = angular.module("myCVApp", ['ngAnimate']);
 
-app.controller('mainCtrl', function ($scope) {
+app.controller('mainCtrl', function ($scope, $http) {
     // Initial values
 
     $scope.asideMenu = true;
@@ -43,6 +43,9 @@ app.controller('mainCtrl', function ($scope) {
     }
     $scope.randomFact();
 
-
-
 });
+/*
+app.controller('contactController', function ($scope, $http) {
+
+
+});*/

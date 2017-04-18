@@ -238,9 +238,11 @@ a:active {
 
 /* Portfolio style */
 #porfolioContainer{
+    /*background-color: #1C262B ;*/
     width: 100%;
     padding-left: 10px;
     padding-top: 10px;
+    height: 100vh;
 }
 /* Resume */
 #resumeImgHeader{
@@ -454,6 +456,11 @@ blockquote em{
     -webkit-clip-path: url("#polygon-clip-hexagon");
     clip-path: url("#polygon-clip-hexagon");
 }*/
+
+.col-divider{
+    border-left: 1px solid #cccccc;
+    padding-left: 30px;
+}
 @media (min-width: 920px) {
     .navbar {
         display: none;

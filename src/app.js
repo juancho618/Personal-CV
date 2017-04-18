@@ -44,10 +44,11 @@ app.get('/contact', function (req, res) {
     res.render('contact');
 });
 app.post('/contact', function (req, res) {
-    var from_email = new helper.Email("test@example.com");
+    console.log(req.body);
+    var from_email = new helper.Email(req.body.email);
     var to_email = new helper.Email("jjsorianoe@gmail.com");
-    var subject = "Sending with SendGrid is Fun";
-    var content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
+    var subject = "Contact Message";
+    var content = new helper.Content("text/plain", req.body.message);
     var mail = new helper.Mail(from_email, subject, to_email, content);
 
     var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
@@ -62,7 +63,11 @@ app.post('/contact', function (req, res) {
         console.log(response.body);
         console.log(response.headers);
     })
-    res.render('contact');
+    res.end('It worked!');
+});
+//portfolio image
+app.get('/project', function (req, res) {
+    res.render('project');
 });
 app.listen(5555, function(){
     console.log('running in port 8080')

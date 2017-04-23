@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const register = require('./functions/register');
 const login = require('./functions/login');
 var bodyParser = require('body-parser');
-var helper = require('sendgrid').mail; //mail with sendngrid
+const helper = require('sendgrid').mail; //mail with sendngrid
 
 
 var app = express();  // Instancing the app

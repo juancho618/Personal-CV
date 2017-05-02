@@ -85,7 +85,7 @@ app.post('/classifier', function (req,res) {
 app.get('/project', function (req, res) {
     res.render('project');
 });
-app.listen(5555, function(){
+app.listen(8080, function(){
     console.log('running in port 8080')
 }); // Define the port that i want  to use
 

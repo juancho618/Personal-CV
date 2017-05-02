@@ -10,7 +10,7 @@ const register = require('./functions/register');
 const login = require('./functions/login');
 var bodyParser = require('body-parser');
 const helper = require('sendgrid').mail; //mail with sendngrid
-
+var PythonShell = require('python-shell');
 
 var app = express();  // Instancing the app
 
@@ -64,6 +64,12 @@ app.post('/contact', function (req, res) {
         console.log(response.headers);
     })
     res.end('It worked!');
+});
+app.get('/classifier', function (req, res) {
+    res.render('classifier');
+});
+app.post('/classifier', function (req,res) {
+
 });
 //portfolio image
 app.get('/project', function (req, res) {

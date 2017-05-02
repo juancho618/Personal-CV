@@ -1,0 +1,25 @@
+extends layout
+block content
+    link(rel="styleSheet", href="/static/css/classifier.css", type="text/css")
+    div#classifierImgHeader
+        h1.bgAboutText Patient Classifier LoS V 0.01
+    div#classifierBlock(ng-controller="classifierController")
+            div.container-fluid
+                div.row
+                    div.col-md-12
+                        div.form-style-6
+                            h1 Patient information
+                            form(name="classifierForm", ng-submit="submitForm()")
+                                input(type="number", name="age", placeholder="Age", required="required", ng-model="patient.age", min=0, max=150)
+                                select(ng-model='patient.gender', name = 'gender',ng-options='x for x in ["Male", "Female"]', required="required")
+                                    option(value='') - Select the gender -
+                                select(ng-model='patient.healthInsurance', name = 'healthInsurance',ng-options='x for x in healthInsurance | orderBy:sortBy', required="required")
+                                    option(value='') - Select the Health Insurance Classification -
+                                select(ng-model='patient.specialty', name ='Specialty',ng-options='x for x in specialty | orderBy:sortBy', required="required")
+                                    option(value='') - Select the Specialty -
+                                select(ng-model='patient.day', name ='day',ng-options='x for x in weekday', required="required")
+                                    option(value='') - Select the day of the week -
+                                select(ng-model='patient.diagnosis', name ='diagnosis',ng-options="x for x in diagnosis | orderBy:sortBy", required="required")
+                                    option(value='') - Select the diagnosis -
+                                input(type="submit", value="Predict")
+

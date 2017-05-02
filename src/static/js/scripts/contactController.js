@@ -3,6 +3,7 @@
  */
 
 angular.module('myCVApp').controller('contactController', ['$scope', '$http', function($scope, $http) {
+
     $scope.contact={};
     $scope.submitForm = function (isValid) {
         console.log($scope.contact);

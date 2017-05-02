@@ -9,9 +9,9 @@ block content
                     div.col-md-12
                         div.form-style-6
                             h1 Patient information
-                            form(name="classifierForm", ng-submit="submitForm()")
+                            form(name="classifierForm", ng-submit="submitForm(classifierForm.$valid)")
                                 input(type="number", name="age", placeholder="Age", required="required", ng-model="patient.age", min=0, max=150)
-                                select(ng-model='patient.gender', name = 'gender',ng-options='x for x in ["Male", "Female"]', required="required")
+                                select(ng-model='patient.gender', name = 'gender',ng-options='x for x in ["M", "F"]', required="required")
                                     option(value='') - Select the gender -
                                 select(ng-model='patient.healthInsurance', name = 'healthInsurance',ng-options='x for x in healthInsurance | orderBy:sortBy', required="required")
                                     option(value='') - Select the Health Insurance Classification -
@@ -22,4 +22,3 @@ block content
                                 select(ng-model='patient.diagnosis', name ='diagnosis',ng-options="x for x in diagnosis | orderBy:sortBy", required="required")
                                     option(value='') - Select the diagnosis -
                                 input(type="submit", value="Predict")
-

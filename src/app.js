@@ -69,7 +69,17 @@ app.get('/classifier', function (req, res) {
     res.render('classifier');
 });
 app.post('/classifier', function (req,res) {
-
+  console.log(req.body);
+  var options = {
+  mode: 'text',
+  args: [req.body.healthInsurance, req.body.age, req.body.diagnosis, req.body.specialty, req.body.gender, req.body.day]
+};
+  PythonShell.run('classifier.py', options, function (err,results) {
+    if (err) throw err;
+    console.log('results: %j', results);
+    console.log('finished');
+    res.send(results);
+  });
 });
 //portfolio image
 app.get('/project', function (req, res) {

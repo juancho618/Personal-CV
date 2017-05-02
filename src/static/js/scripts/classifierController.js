@@ -188,16 +188,29 @@ angular.module('myCVApp').controller('classifierController', ['$scope', '$http',
         'RUPTURA DE ANEURISMA DE LA AORTA ABDOMINAL'];
 
     $scope.submitForm = function (isValid) {
-
+        console.log(isValid);
 
         if (isValid) {
             $http({
                 method: 'post',
-                url: '/contact',
-                data: $scope.contact,
+                url: '/classifier',
+                data: $scope.patient,
                 headers: {'Content-Type': 'application/json'}
             }).then(function success(response) {
-                swal("Thanks!", "I will reply you ASAP!", "success");
+              console.log(response.data[1]);
+              if(response.data[0] == "[0]" && response.data[1] == '[0]' ){
+                swal("Good!", "Both Classifier predict a Normal Stay for the patient", "success");
+              }
+              else if(response.data[0] == '[1]' && response.data[1] == '[1]' ){
+                swal("Attention!", "Both Classifier predict a Long Stay for the patient", "warning");
+              }
+              else if(response.data[0] == '[1]' && response.data[1] == '[0]' ){
+                swal("Attention!", "The tree Classifier predict a Long Stay for the patient", "warning");
+              } else if(response.data[0] == '[0]' && response.data[1] == '[1]' ){
+                swal("Attention!", "The Naive Bayes Classifier predict a Long Stay for the patient", "warning");
+              }
+
+
             }, function error(response) {
                 swal("Invalid Data!", "Please fill in the right information!", "error");
             });

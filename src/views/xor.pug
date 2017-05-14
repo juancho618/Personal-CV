@@ -3,12 +3,23 @@ block content
     link(rel="styleSheet", href="/static/css/xor.css", type="text/css")
     div#neuralImgHeader
         h1.bgAboutText XOR test
-    div#neuralBlock(ng-controller="classifierController")
-            div.container-fluid
-              div.x1
-                div.circle
-                  input.cinput(type="number", min=0, max=1)
-              div.x2
-                div.circle
-                  input.cinput(type="number", min=0, max=1)
-          
+    div#neuralBlock(ng-controller="xorController")
+        form(name="xorForm", ng-submit="submitForm(xorForm.$valid)")
+                div.container-fluid
+                    div.nn-container
+                      div.x1
+                        div.circle
+                          input.cinput(type="number", min=0, max=1, ng-model="bits.x1")
+                        div.verticalLine(style="height: 25vh;")
+                      div.x2
+                        div.circle
+                          input.cinput(type="number", min=0, max=1, ng-model="bits.x2")
+                        div.verticalLine(style="height: 25vh;")
+                      div.horizontalLine
+                      div.clearfix
+                      div.result
+                          div.verticalLine(style="height: 10vh;")
+                          div.circle
+                              input.cinput(type="text", disabled="disabled", ng-model="bits.output",formnovalidate)
+                      input(type="submit", value="Predict")
+                p.title XOR

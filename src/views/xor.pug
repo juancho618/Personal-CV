@@ -1,0 +1,14 @@
+extends layout
+block content
+    link(rel="styleSheet", href="/static/css/xor.css", type="text/css")
+    div#neuralImgHeader
+        h1.bgAboutText XOR test
+    div#neuralBlock(ng-controller="classifierController")
+            div.container-fluid
+              div.x1
+                div.circle
+                  input.cinput(type="number", min=0, max=1)
+              div.x2
+                div.circle
+                  input.cinput(type="number", min=0, max=1)
+          

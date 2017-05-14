@@ -1,0 +1,53 @@
+#neuralImgHeader{
+    height: 25vh;
+    background: url("/static/img/nn.jpg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    /* Add Opacity effect*/
+    -khtml-opacity:.50;
+    -moz-opacity:.50;
+    -ms-filter:"alpha(opacity=50)";
+    filter:alpha(opacity=50);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+    opacity:.50;
+}
+
+/* contact form div */
+#neuralBlock{
+    height: 75vh;
+    background: #1C262B;
+}
+
+.circle {
+    background-color:#fff;
+    border:5px solid #2b542c;
+    height:100px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:100px;
+}
+
+.x1{
+  position: relative;
+  left: 25%;
+  width: 150px;
+}
+
+.x2{
+  position: relative;
+  left: 75%;
+}
+
+.cinput{
+position: relative;
+top: 35%;
+left: 23%;
+width: 50px;
+color: black;
+border: 0;
+outline: 0;
+background: transparent;
+border-bottom: 1px solid black;
+text-align: center;
+}

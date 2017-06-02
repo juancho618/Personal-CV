@@ -21,33 +21,84 @@
 .circle {
     background-color:#fff;
     border:5px solid #2b542c;
-    height:100px;
+    height: 10vh;
     border-radius:50%;
     -moz-border-radius:50%;
     -webkit-border-radius:50%;
-    width:100px;
+    width: 10vh;
 }
 
 .x1{
   position: relative;
   left: 25%;
-  width: 150px;
+    display: inline-block;
 }
 
 .x2{
   position: relative;
-  left: 75%;
+    display: inline-block;
+    float: right;
+    left: -25%;
 }
-
+.result{
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    left: calc(50% - 5vh); ;
+}
 .cinput{
 position: relative;
 top: 35%;
 left: 23%;
-width: 50px;
+width: 5vh;
 color: black;
 border: 0;
 outline: 0;
 background: transparent;
-border-bottom: 1px solid black;
+border-bottom: 1px solid #2BA163;
 text-align: center;
+}
+
+.verticalLine {
+     border-left: thick solid #2b542c;
+     display: inline-block;
+     position: relative;
+     left: 50%;
+ }
+.horizontalLine {
+    border-top: thick solid #2b542c;
+    width: 50%;
+    position: relative;
+    left:25%;
+}
+
+/* Button css */
+input[type="submit"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #2BA163;
+    border-bottom: 2px solid #2BA163;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
+    margin-top: 1vh;
+
+}
+.nn-container{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    padding-top: 3vh;
+}
+
+.title{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
 }

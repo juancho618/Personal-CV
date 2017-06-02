@@ -95,7 +95,8 @@ app.get('/nn', function(req, res){
 });
 
 app.post('/nn', function(req, res){
-
+    var x1 = req.body.x1;
+    var x2 = req.body.x2;
 
 var synaptic = require('synaptic');
 const Layer = synaptic.Layer;
@@ -136,10 +137,9 @@ for (var i = 0; i < 20000; i++)
 }
 
 // test the network
-console.log(myNetwork.activate([0,0])); // [0.015020775950893527]
-console.log(myNetwork.activate([0,1])); // [0.9815816381088985]
-console.log(myNetwork.activate([1,0])); // [0.9871822457132193]
-console.log(myNetwork.activate([1,1])); // [0.012950087641929467]
+const result = myNetwork.activate([x1,x2]);
+console.log(result);
+    res.send(result);
 });
 
 //portfolio image

@@ -2,17 +2,18 @@
  * Created by Juancho on 2/26/2017.
  */
 'use strict';
-
-var express = require('express'); // Access to the express set-up
+const express = require('express'); // Access to the express set-up
 const auth = require('basic-auth');
 const jwt = require('jsonwebtoken');
 const register = require('./functions/register');
 const login = require('./functions/login');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const helper = require('sendgrid').mail; //mail with sendngrid
-var PythonShell = require('python-shell');
+const PythonShell = require('python-shell');
 
-var app = express();  // Instancing the app
+const app = express();  // Instancing the app
+
+const router = express.Router();
 
 app.use('/static', express.static(__dirname + '/static')); // use define the middleware
 app.use(bodyParser.urlencoded());
@@ -21,12 +22,19 @@ app.use(bodyParser.json());
 app.set('view engine', 'pug');  // how to render the app
 app.set('views', __dirname + '/views');  // path to the views
 
+//TODO: change all the routes and use ECMAS 2015
+// Routing to test
+router.route('/intro-test')
+    .get((req, res) => 
+        res.render('intro_test'))
+
+
 
 
 // Creating the routes
-app.get('/', function (req, res) {
-    res.render('index');
-});
+router.route('/')
+    .get((req, res) => res.render('index'))
+
 app.get('/portfolio', function (req, res) {
     res.render('portfolio');
 });
@@ -45,14 +53,14 @@ app.get('/contact', function (req, res) {
 });
 app.post('/contact', function (req, res) {
     console.log(req.body);
-    var from_email = new helper.Email(req.body.email);
-    var to_email = new helper.Email("jjsorianoe@gmail.com");
-    var subject = "Contact Message";
-    var content = new helper.Content("text/plain", req.body.message);
-    var mail = new helper.Mail(from_email, subject, to_email, content);
+    const from_email = new helper.Email(req.body.email);
+    const to_email = new helper.Email("jjsorianoe@gmail.com");
+    const subject = "Contact Message";
+    const content = new helper.Content("text/plain", req.body.message);
+    const mail = new helper.Mail(from_email, subject, to_email, content);
 
-    var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-    var request = sg.emptyRequest({
+    const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+    const request = sg.emptyRequest({
         method: 'POST',
         path: '/v3/mail/send',
         body: mail.toJSON()
@@ -107,7 +115,7 @@ var myNetwork = new Network({
 });
 
 // train the network - learn XOR
-var learningRate = .3;
+const learningRate = .3;
 for (var i = 0; i < 20000; i++)
 {
 	// 0,0 => 0
@@ -138,38 +146,38 @@ console.log(myNetwork.activate([1,1])); // [0.012950087641929467]
 app.get('/project', function (req, res) {
     res.render('project');
 });
-app.listen(8080, function(){
+app.listen(8081, function(){
     console.log('running in port 8080')
 }); // Define the port that i want  to use
 
 // Register a new user
-app.post('/register', function (req, res) {
-    var token = req.body.encode;
-    var secret = 'keytest123';
-   var decoded =  jwt.verify(token, new Buffer( secret, 'base64' ));
-   var msg = decoded.sub;
-   var splitMsg = msg.split('|');
+router.route('/register')
+    .post((req, res) => {
+        const token = req.body.encode;
+        const secret = 'keytest123';
+        const decoded =  jwt.verify(token, new Buffer( secret, 'base64' ));
+        const msg = decoded.sub;
+        const splitMsg = msg.split('|');
 
 
-    var name = splitMsg[1];
-    var email = splitMsg[2];
-    var password = splitMsg[3];
+        const name = splitMsg[1];
+        const email = splitMsg[2];
+        const password = splitMsg[3];
 
-    if (!name || !email || !password || !name.trim() || !email.trim() || !password.trim()) {
+        if (!name || !email || !password || !name.trim() || !email.trim() || !password.trim()) {
+            res.status(400).json({ message: 'Invalid Request !' });
+        } else {
 
-        res.status(400).json({ message: 'Invalid Request !' });
-    } else {
+            register.registerUser(name, email, password).then( (result) => {
 
-        register.registerUser(name, email, password).then(function (result) {
+                res.setHeader('Location', '/register/' + email);
+                res.status(result.status).json({ message: result.message });
+                console.log(res);
+            }).catch( (err) =>  res.status(err.status).json({ message: err.message }))            
+        }
+    })
 
-            res.setHeader('Location', '/register/' + email);
-            res.status(result.status).json({ message: result.message });
-            console.log(res);
-        }).catch(function (err) {
-            return res.status(err.status).json({ message: err.message });
-        });
-    }
-});
+
 
 // Login with user
 app.post('/login', function (req, res) {
@@ -196,3 +204,5 @@ app.post('/login', function (req, res) {
     }
 
 });
+
+app.use(router); //defines the use of the router
